@@ -1,0 +1,8 @@
+import functools
+def get_value(dictionary, keys, default=None):
+    return functools.reduce(lambda d, key: d.get(key, default) if isinstance(d, dict) else default, keys.split("/"), dictionary)
+
+
+object = {'a':{'b':{'c':'d'}}}
+key = input("Enter key :")
+print(get_value(object, key))
