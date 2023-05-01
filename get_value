@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import functools
 def get_value(dictionary, keys, default=None):
     return functools.reduce(lambda d, key: d.get(key, default) if isinstance(d, dict) else default, keys.split("/"), dictionary)
